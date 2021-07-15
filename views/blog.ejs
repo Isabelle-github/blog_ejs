@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <p class="pTitle">A few words about this blog platform, Ghost, and how this site was made</p>
+        <img class='imgBlog' src="/img/imgBase.png" alt="img">
+        <div class="line"> <span></span></div>
+        <section class="blogContent">
+            <div class="head">
+                <img src="" alt="">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus tenetur voluptatum
+                ea neque numquam labore incidunt? Eligendi quo saepe ad eum blanditiis, soluta dignissimos doloremque
+                quos nemo sed.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus tenetur voluptatum
+                ea neque numquam labore incidunt? Eligendi quo saepe ad eum blanditiis, soluta dignissimos doloremque
+                quos nemo sed.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus tenetur voluptatum
+                ea neque numquam labore incidunt? Eligendi quo saepe ad eum blanditiis, soluta dignissimos doloremque
+                quos nemo sed.</p>
+
+        </section>
+        <p class="artclTitle">What to read next</p>
+        <section class="allArticle">
+            <% for( let index=0; index < 6; index++ ) { %>
+                <article>
+                    <img src='/img<%=data[index].url %>' alt="img">
+                    <p>
+                        <%= data[index].title %>
+                    </p>
+                </article>
+                <% } %>
+        </section>
+        <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

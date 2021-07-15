@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <section class="mainPic">
+            <img src="/img/imgBase.png" alt="img">
+            <p>A few words about this blog platform, Ghost, and how this site was made</p>
+            <div></div>
+        </section>
+        <p class="artclTitle">All articles</p>
+        <section class="allArticle">
+
+            <% data.forEach(element=> { %>
+                <article>
+                    <img src='/img<%=element.url %>' alt="img">
+                    <p>
+                        <%= element.title %>
+                    </p>
+                </article>
+                <% }) %>
+        </section>
+
+        <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
