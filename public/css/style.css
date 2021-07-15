@@ -91,10 +91,7 @@ form input:last-of-type{
     padding: 1em;
     background-color: var(--black-color);
 }
-.line{
-    margin-top: 4em;
-    border-top: solid 2px var(--black-color);
-}
+
 
 /* FOOTER */
 footer{
@@ -161,4 +158,35 @@ footer .links a{
     position: absolute;
    left:85%;
    width: 2.5em;
+}
+
+/* eyes */
+.line{
+    margin-top: 2em;
+    border-top: solid 2px var(--black-color);
+    position: relative;
+}
+.eye1,.eye2 {
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    height: 50px;
+    width: 30px;
+    left: 50%;
+    bottom: -20px;
+    background-color: var(--white-color);
+    border:solid 1px var(--black-color)
+}
+.eye2 {
+    left: 52.5%;
+}
+.eye1:after, .eye2::after { /*pupil*/
+    position: absolute;
+    right: 3px;
+    width: 15px;
+    top: 15px;
+    height: 25px;
+    background: #000;
+    border-radius: 50%;
+    content: " ";
 }

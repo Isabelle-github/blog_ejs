@@ -21,7 +21,10 @@
             <input type="submit" value="SEND ARTICLE">
             <!-- <button type="submit">SEND ARTICLE</button> -->
         </form>
-        <div class="line"> <span></span></div>
+        <div class="line">
+            <div class='eye1'></div>
+            <div class='eye2'></div>
+        </div>
         <p class="artclTitle">What to read next</p>
         <section class="allArticle">
             <% for( let index=0; index < 6; index++ ) { %>
@@ -33,7 +36,6 @@
                 </article>
                 <% } %>
         </section>
-
         <%- include('./partials/footer.ejs') %>
 </body>
 
