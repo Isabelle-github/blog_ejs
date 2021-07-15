@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 *{
     box-sizing: border-box;
     margin:0;
+    font-family: 'Fira Code', monospace;
+
 }
 :root {
     --white-color: #fff;
@@ -54,6 +58,7 @@ nav a{
    flex-wrap: wrap;
    margin: 2em 10em;
    gap: 1em;
+   row-gap: 2em;
 }
 .allArticle article{
     text-align: center;
@@ -62,9 +67,11 @@ nav a{
     display: flex;
     flex-direction: column;
 }
-.allArticle article img{
-    height: 200px;
+.allArticle article a img{
+    height: 150px;
+    width: 100%;
     object-fit: fill;
+    display: inline-block;
 }
 .allArticle article p {
     
@@ -79,7 +86,7 @@ form{
 form input{
     padding: 1em;
 }
-form button{
+form input:last-of-type{
     color: var(--white-color);
     padding: 1em;
     background-color: var(--black-color);
@@ -126,4 +133,32 @@ footer .links a{
 .imgBlog{
     width: 100%;
     object-fit: contain;
+}
+.blogContent{
+    padding: 3em 10em;
+}
+.head .profil{
+    border-radius: 50%;
+    width: 5em;
+    margin-right: 1em;
+}
+.head{
+    position: relative;
+    border-top: solid var(--black-color) 2px;
+    display: flex;
+    padding-top: 1em;
+    align-items: center;
+}
+.head h3{
+    padding-top: 0.5em;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+.blogText {
+  padding-top: 2em;
+}
+.twitter{
+    position: absolute;
+   left:85%;
+   width: 2.5em;
 }

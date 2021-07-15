@@ -21,7 +21,7 @@
 
             <% data.forEach(element=> { %>
                 <article>
-                    <img src='/img<%=element.url %>' alt="img">
+                    <a href="/<%= element.id %> "><img src='/img<%=element.url %>' alt="img"></a>
                     <p>
                         <%= element.title %>
                     </p>

@@ -11,29 +11,45 @@
 
 <body>
     <%- include('./partials/nav.ejs') %>
-        <p class="pTitle">A few words about this blog platform, Ghost, and how this site was made</p>
+        <p class="pTitle">
+            <%= data[id].title %>
+        </p>
         <img class='imgBlog' src="/img/imgBase.png" alt="img">
-        <div class="line"> <span></span></div>
+
         <section class="blogContent">
             <div class="head">
-                <img src="" alt="">
+                <% console.log(id) %>
+                    <img class="profil" src="<%= data[id].author_bild %> " alt="">
+                    <div>
+                        <h3>
+                            <%= data[id].author %>
+                        </h3>
+                        <p>
+                            <%= data[id].published_at %> - <%= data[id].duration %> min read
+                        </p>
+                    </div>
+                    <img class="twitter" src="/img/twitter.png" alt="Twitter">
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus tenetur voluptatum
+            <p class='blogText'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus
+                tenetur voluptatum
                 ea neque numquam labore incidunt? Eligendi quo saepe ad eum blanditiis, soluta dignissimos doloremque
                 quos nemo sed.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus tenetur voluptatum
+            <p class='blogText'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus
+                tenetur voluptatum
                 ea neque numquam labore incidunt? Eligendi quo saepe ad eum blanditiis, soluta dignissimos doloremque
                 quos nemo sed.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus tenetur voluptatum
+            <p class='blogText'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore repudiandae natus
+                tenetur voluptatum
                 ea neque numquam labore incidunt? Eligendi quo saepe ad eum blanditiis, soluta dignissimos doloremque
                 quos nemo sed.</p>
 
         </section>
+        <div class="line"> <span></span></div>
         <p class="artclTitle">What to read next</p>
         <section class="allArticle">
             <% for( let index=0; index < 6; index++ ) { %>
                 <article>
-                    <img src='/img<%=data[index].url %>' alt="img">
+                    <a href="/<%= data[index].id %>"><img src='/img<%=data[index].url %>' alt=" img"></a>
                     <p>
                         <%= data[index].title %>
                     </p>

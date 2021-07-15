@@ -7,6 +7,9 @@ app.use(express.json()) // Um die Daten in json Format umzuwandeln
 app.use(express.urlencoded({ extended: true }))
 const currentDay = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
 const fileSyst = require('fs')
+// ...rest of the initial code omitted for simplicity.
+const { body, validationResult } = require('express-validator');
+const nodemail = require('nodemailer')
 
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
@@ -16,12 +19,14 @@ app.get('/', (req, res) => {
     res.render('index', { data: dataArticle })
 })
 app.get('/newArticle', (req, res) => {
-    res.render('newArticle', { data: dataArticle, numb: random })
-})
-app.get('/blog', (req, res) => {
-    res.render('blog', { data: dataArticle, numb: random })
+    res.render('newArticle', { data: dataArticle })
 })
 
+app.get('/:id', function (req, res) {
+    const article_ID = req.params.id; // 'user'
+    console.log(dataArticle[article_ID])
+    res.render('blog', { data: dataArticle, id: article_ID })
+});
 app.post('/', (req, res) => {
     console.log(req.body)
     dataArticle.push({
