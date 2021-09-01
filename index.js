@@ -42,6 +42,31 @@ app.post('/', (req, res) => {
     fileSyst.writeFile('./data.json', JSON.stringify(dataArticle), 'utf8', (err) => {
         if (err) throw err
     })
+    let transporter = nodemail.createTransport({
+        host: "smtp.ethereal.email",
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+            user: 'bartholome45@ethereal.email', // generated ethereal user
+            pass: 'RA63pfzZ32vjyx4FE9' // generated ethereal password
+        },
+    });
+
+    // send mail with defined transport object
+    transporter.sendMail({
+        from: 'bartholome45@ethereal.email', // sender address
+        to: "ixavierayix@yahoo.fr", // list of receivers
+        subject: "Hello ✔", // Subject line
+        text: "Hello world?", // plain text body
+        html: "<b>Hello world?</b>", // html body
+    }, function (err, info) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(info)
+        }
+    });
+
     res.redirect('/newArticle')
 })
 app.listen(PORT, () => { console.log(`http://localhost:${PORT}`) })
